@@ -34,7 +34,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v6
         with:
-          context: ./infrastructure/images/gh-runner
+          context: .
+          file: Dockerfile.azure-pipelines
           push: true
           platforms: linux/amd64,linux/arm64
           tags: ghcr.io/${{ steps.vars.outputs.reponame }}:latest
